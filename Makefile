@@ -4,7 +4,7 @@ VOLUME=/data/dockers/${CNAME}
 VIRTUAL_VOICE_PORT=9987
 SERVER_QUERY_PORT=10011
 FILE_TRANSFER_PORT=30033
-INAME=fingerland-asso/${CNAME}
+INAME=fingerland/${CNAME}
 
 # computed data
 SERVICE_ENV_FILE=${PWD}/${CNAME}.env
