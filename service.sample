@@ -1,0 +1,14 @@
+[Unit]
+Description=Teamspeak3 server
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+TimeoutStartSec=0
+EnvironmentFile=/etc/ts3-server.env
+ExecStartPre=-/usr/bin/docker kill ${CNAME}
+ExecStartPre=-/usr/bin/docker rm ${CNAME}
+ExecStartPre=/usr/bin/docker pull ${INAME}
+ExecStart=/usr/bin/docker run -ti -v ${VOLUME}:/home/teamspeak/data -p ${VIRTUAL_VOICE_PORT}:9987/udp -p ${FILE_TRANSFER_PORT}:30033 -p ${SERVER_QUERY_PORT}:10011 ${INAME}
+ExecStop=/usr/bin/docker stop ${CNAME}
