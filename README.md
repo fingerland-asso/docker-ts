@@ -1,0 +1,2 @@
+# docker-ts
+Teamspeak server
