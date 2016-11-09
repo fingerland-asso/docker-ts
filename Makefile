@@ -1,15 +1,15 @@
-# change if needed
+############################### change if needed ###############################
 CNAME=ts3-server
 VOLUME=/data/dockers/${CNAME}
 VIRTUAL_VOICE_PORT=9987
 SERVER_QUERY_PORT=10011
 FILE_TRANSFER_PORT=30033
 INAME=fingerland/${CNAME}
-
-# computed data
+################################ computed data #################################
 SERVICE_ENV_FILE=${PWD}/${CNAME}.env
 SERVICE_FILE=${PWD}/${CNAME}.service
 OPTIONS=-v ${VOLUME}:/home/teamspeak/data -p ${VIRTUAL_VOICE_PORT}:9987/udp -p ${FILE_TRANSFER_PORT}:30033 -p ${SERVER_QUERY_PORT}:10011
+################################################################################
 
 help:
 	@echo "Fingerland Teamspeak server (docker builder)"
